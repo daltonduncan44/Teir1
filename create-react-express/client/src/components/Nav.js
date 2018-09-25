@@ -6,6 +6,14 @@ import { Table } from 'reactstrap';
 
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
+var qbCount= 0;
+var rbCount= 0;
+var wrCount= 0;
+var teCount= 0;
+var flexCount= 0;
+var defCount= 0;
+var kCount= 0; 
+
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -38,8 +46,8 @@ export default class Example extends React.Component {
             <Row>
             <Col sm="12" md={{ size: 2, offset: 5 }}>
               <Card body inverse color="success">
-        <CardTitle>Special Title Treatment</CardTitle>
-        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <CardTitle>Draft Help</CardTitle>
+        <CardText></CardText>
         <Button color="secondary">Button</Button>
         </Card>
               </Col>
@@ -51,30 +59,38 @@ export default class Example extends React.Component {
           <Table dark>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+          <th>#</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Player</th>
+            <th>Teir</th>
+            <th>Position Rank</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
         </tbody>
       </Table>
@@ -84,30 +100,38 @@ export default class Example extends React.Component {
           <Table dark>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+          <th>#</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Player</th>
+            <th>Teir</th>
+            <th>Position Rank</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
           </tr>
         </tbody>
       </Table>
