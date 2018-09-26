@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export default {
-  // Gets articles from the NYT API
+  // Gets articles from the  API
   getPlayers: function(params) {
     return axios.get("/api/allPlayers");
   },

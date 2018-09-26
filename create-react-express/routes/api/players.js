@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const playerscontroller = require("../../controllers/playerscontroller");
+const playerscontroller = require("../../controller/playerscontroller");
 
-// Matches with "/api/articles"
+// Matches with "/
 router.route("/")
   .get(playerscontroller.findAll)
   .post(playerscontroller.create);

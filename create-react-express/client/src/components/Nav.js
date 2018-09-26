@@ -6,13 +6,13 @@ import { Table } from 'reactstrap';
 
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
-var qbCount= 0;
-var rbCount= 0;
-var wrCount= 0;
-var teCount= 0;
-var flexCount= 0;
-var defCount= 0;
-var kCount= 0; 
+//var qbCount= 0;
+//var rbCount= 0;
+//var wrCount= 0;
+//var teCount= 0;
+//var flexCount= 0;
+//var defCount= 0;
+//var kCount= 0; 
 
 export default class Example extends React.Component {
   constructor(props) {
