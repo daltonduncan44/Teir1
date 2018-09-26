@@ -12,6 +12,7 @@ import API from "./utils/API.js"
 class App extends Component{
 //set initial state for the player data
 state = {
+  players:[],
   position: '',
   team: '',
   player:'',
@@ -26,28 +27,38 @@ componentDidMount() {
 
 
 //This should retrieve the player from the 
+// getPlayers = () => {
+//   API.getPlayers({
+//     position: this.state.position,
+//     team: this.state.team,
+//     player:this.state.player,
+//     tier:this.state.tier,
+//     positionalRank:this.state.positionalRank
+//   })
+//     .then(res =>
+//       this.setState({
+//          position: res.position,
+//          team:res.team,
+//          player:res.player,
+//          tier:res.tier,
+//          positionalRank:res.positonalRank,
+//          message: !res.data.length
+//           ? "No New Articles Found, Try a Different Query"
+//           : ""
+//       })
+//     )
+
+//     .catch(err => console.log(err));
+// };
 getPlayers = () => {
-  API.getPlayers({
-    position: this.state.position,
-    team: this.state.team,
-    player:this.state.player,
-    tier:this.state.tier,
-    positionalRank:this.state.positionalRank
-  })
-    .then(res =>
-      this.setState({
-         position: res.position,
-         team:res.team,
-         player:res.player,
-         tier:res.tier,
-         positionalRank:res.positonalRank,
-         message: !res.data.length
-          ? "No New Articles Found, Try a Different Query"
-          : ""
-      })
-    )
-    .catch(err => console.log(err));
+  API.getPlayers()
+    .then (res =>
+      this.setState({players: res.data})
+      )
+  .catch(err => console.log(err));
+    
 };
+
   render()
   {
     return (
@@ -55,7 +66,8 @@ getPlayers = () => {
         <Jumbo/>
         <Nav/>
         {/* Pass the data down as props to the grid */}
-        <Grid  />
+        {/* <Grid  position= {position} team = {team} player = {player} teir = {teir}  /> */}
+        <Grid />
       </div>
    );
   }

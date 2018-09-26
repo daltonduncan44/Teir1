@@ -3,14 +3,14 @@
  // Defining methods for the articleController
  module.exports = {
    findAll: function(req, res) {
-     db.Players
+     db.players
        .find(req.query)
        .sort({ date: -1 })
        .then(dbPlayers => res.json(dbPlayers))
        .catch(err => res.status(422).json(err));
    },
    findById: function(req, res) {
-     db.Players
+     db.players
        .findById(req.params.id)
        .then(dbPlayers => res.json(dbPlayers))
        .catch(err => res.status(422).json(err));
@@ -21,19 +21,19 @@
        title: req.body.headline.main,
        url: req.body.web_url
      };
-     db.Players
-       .create(article)
+     db.players
+       .create(players)
        .then(dbPlayers => res.json(dbPlayers))
        .catch(err => res.status(422).json(err));
    },
    update: function(req, res) {
-     db.Players
+     db.players
        .findOneAndUpdate({ _id: req.params.id }, req.body)
        .then(dbArticle => res.json(dbArticle))
        .catch(err => res.status(422).json(err));
    },
    remove: function(req, res) {
-     db.Players
+     db.players
        .findById({ _id: req.params.id })
        .then(dbArticle => dbArticle.remove())
        .then(dbArticle => res.json(dbArticle))

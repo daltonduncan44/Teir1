@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default {
   // Gets articles from the  API
-  getPlayers: function(params) {
+  getPlayers: function() {
     return axios.get("/api/allPlayers");
   },
   // Gets all saved articles
