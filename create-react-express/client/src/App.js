@@ -22,7 +22,8 @@ state = {
 
 //Component did mount that calls the controller method
 componentDidMount() {
-  this.getPlayers(); 
+  this.getAllPlayers(); 
+
 }
 
 
@@ -50,7 +51,8 @@ componentDidMount() {
 
 //     .catch(err => console.log(err));
 // };
-getPlayers = () => {
+getAllPlayers = () => {
+
   API.getPlayers()
     .then (res =>{
       console.log(`Response ${res}`);
@@ -64,13 +66,14 @@ getPlayers = () => {
 
   render()
   {
+    console.log(this.state.players)
     return (
       <div>
         <Jumbo/>
         <Nav/>
         {/* Pass the data down as props to the grid */}
         {/* <Grid  position= {position} team = {team} player = {player} teir = {teir}  /> */}
-        <Grid />
+        <Grid players ={this.state.players}/>
       </div>
    );
   }

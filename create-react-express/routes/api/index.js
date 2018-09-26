@@ -3,7 +3,7 @@ const playerRoutes = require("./players");
 
 
 // NYT routes
-router.use("/articles", playerRoutes);
+router.use("/api/allPlayers", playerRoutes);
 
 
 
