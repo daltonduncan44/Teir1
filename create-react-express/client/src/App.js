@@ -52,8 +52,11 @@ componentDidMount() {
 // };
 getPlayers = () => {
   API.getPlayers()
-    .then (res =>
+    .then (res =>{
+      console.log(`Response ${res}`);
       this.setState({players: res.data})
+    }
+     
       )
   .catch(err => console.log(err));
     

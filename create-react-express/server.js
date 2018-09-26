@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const playerscontroller = require("./controller/playerscontroller");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/api");
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

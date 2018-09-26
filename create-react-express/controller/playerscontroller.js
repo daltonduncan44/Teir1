@@ -3,7 +3,7 @@
  // Defining methods for the articleController
  module.exports = {
    findAll: function(req, res) {
-     db.players
+     db.Players
        .find(req.query)
        .sort({ date: -1 })
        .then(dbPlayers => res.json(dbPlayers))
