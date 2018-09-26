@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
  
 const playersSchema = new Schema({
-    Postition: { type: String, required: true },
+    Position: { type: String, required: true },
     Player: { type: String, required: true },
     Teir: { type: Number, required: true },
     Pr: { type: Number, required: true }

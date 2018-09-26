@@ -17,5 +17,24 @@ export default {
   // Saves an article to the database
   savePlayer: function(articleData) {
     return axios.post("/api/players", articleData);
-  }
+  },
+  getQuarterbacks: function() {
+    return axios.get("/api/allPlayers/qb");
+  },
+  getRunning: function() {
+    return axios.get("/api/allPlayers/rb");
+  },
+  getRecever: function() {
+    return axios.get("/api/allPlayers/wr");
+  },
+  getDEF: function() {
+    return axios.get("/api/allPlayers/def");
+  },
+
+  getTE: function() {
+    return axios.get("/api/allPlayers/te");
+  },
+  getAll: function() {
+    return axios.get("/api/allPlayers/");
+  },
 };
