@@ -8,8 +8,8 @@ import { Button, ButtonGroup } from 'reactstrap';
 export default class Grid extends React.Component{
 render(){
 
-   let { players, getAllQuarterBacks, getAllRB, getAllWR, getAllDEF, getAllTE, getAllPL } = this.props
-   console.log(players)
+   let { players, getAllQuarterBacks, getAllRB, getAllWR, getAllDEF, getAllTE, getAllPL, addToMyTeam} = this.props
+   //console.log(players)
 
 
 
@@ -27,6 +27,7 @@ render(){
         <Button onClick={getAllTE}>Te</Button>
         <Button onClick={getAllDEF}>Def/K</Button>
       </ButtonGroup>
+     
     <Table dark >
     
         <thead>
@@ -42,29 +43,31 @@ render(){
           </tr>
         </thead>
         <tbody>
-        {players.map( player =>{
-          console.log(player)
+        {players.map( player => {
+          //console.log(player._id)
           return (
 
-          <tr>
+          <tr key={player._id}>
             
             <td>{player.Player}</td>
             <td>{player.Team}</td>
             <td>{player.Position}</td>
             <td>{player.Teir}</td>
             <td>{player.Pr}</td>
-            <td><Button color="success">My Team</Button>{' '}</td>
+            <td><Button onClick={()=>addToMyTeam(player.Player)} color="success"  >My Team</Button>{' '}</td>
             <td><Button color="danger">Taken</Button>{' '}</td>
           </tr>
           )
           })}
         </tbody>
       </Table>
+      
     </Col>
   
     </Row>
     
     </Container>
+    
     );
 }
 }

@@ -9,12 +9,17 @@
        .then(dbPlayers => res.json(dbPlayers))
        .catch(err => res.status(422).json(err));
    },
-  //  findById: function(req, res) {
-  //    db.Players
-  //      .findById(req.params.id)
-  //      .then(dbPlayers => res.json(dbPlayers))
-  //      .catch(err => res.status(422).json(err));
-  //  },
+   findById: function(req, res) {
+     console.log("Controller ID " + req.params.id);
+     const name = JSON.stringify(req.params.id);
+     db.Players
+       .findOne({"Player": "" + req.params.id +""})
+       .then(Player => {
+        console.log("The data back from the DB", Player);
+        res.json(Player)
+       } )
+       .catch(err => res.status(422).json(err));
+   },
   //  create: function(req, res) {
   //    const article = {
   //      _id: req.body._id,
@@ -26,12 +31,14 @@
   //      .then(dbPlayers => res.json(dbPlayers))
   //      .catch(err => res.status(422).json(err));
   //  },
-  //  update: function(req, res) {
-  //    db.Players
-  //      .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //      .then(dbArticle => res.json(dbArticle))
-  //      .catch(err => res.status(422).json(err));
-  //  },
+   update: function(req, res) {
+    console.log("update function id", req.params.id);
+     db.Players
+       .findOneAndUpdate({ _id: req.params.id }, req.body)
+       .then(dbPlayers => res.json(dbPlayers))
+       .catch(err => res.status(422).json(err));
+      
+   },
   //  remove: function(req, res) {
   //    db.Players
   //      .findById({ _id: req.params.id })

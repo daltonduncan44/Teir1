@@ -6,12 +6,11 @@ router.route("/")
   .get(playerscontroller.findAll)
   // .post(playerscontroller.create);
 
-// Matches with "/api/articles/:id"
-// router
-//   .route("/:id")
-//   .get(playerscontroller.findById)
-//   .put(playerscontroller.update)
-//   .delete(playerscontroller.remove);
+// Matches with "/api/allPlayers/:id"
+router
+  .route("/:id")
+  .get(playerscontroller.findById)
+ 
 router
   .route("/qb")
   .get(playerscontroller.findByPosition)
@@ -28,4 +27,10 @@ router
   router
   .route("/te")
   .get(playerscontroller.findTE)
+  // Matches with "/api/allPlayers/:id"
+  // router
+  // .route("/:id")
+  // .get(playerscontroller.findById)
+  
+  
 module.exports = router;

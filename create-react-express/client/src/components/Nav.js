@@ -1,10 +1,11 @@
 
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand,  } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { Table } from 'reactstrap';
 
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
+
 
 //var qbCount= 0;
 //var rbCount= 0;
@@ -15,6 +16,8 @@ import { Card, Button, CardTitle, CardText } from 'reactstrap';
 //var kCount= 0; 
 
 export default class Example extends React.Component {
+  
+
   constructor(props) {
     super(props);
 
@@ -30,6 +33,7 @@ export default class Example extends React.Component {
     });
   }
   render() {
+    let { myTeam } = this.props
     return (
       <div>
         <Navbar className="navbar-dark bg-dark">
@@ -68,30 +72,19 @@ export default class Example extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
+        {myTeam.map( team =>{
+          console.log(team)
+          return (
+          <tr  key={team._id}>
             <th scope="row">1</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
+            <td>{team.Player}</td>
+            <td>{team.Team}</td>
+            <td>{team.Position}</td>
+            <td>{team.Teir}</td>
+            <td>{team.Pr}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
+          ) 
+})}
         </tbody>
       </Table>
           </Col>
@@ -117,22 +110,7 @@ export default class Example extends React.Component {
             <td>...</td>
             <td>...</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-          </tr>
+
         </tbody>
       </Table>
       </Col>

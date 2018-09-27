@@ -37,4 +37,11 @@ export default {
   getAll: function() {
     return axios.get("/api/allPlayers/");
   },
-};
+
+  getPlayer: function(_id) 
+  {
+    console.log("id in api", _id)
+    return axios.get("/api/allPlayers/" + _id);
+  },
+ 
+ };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Nav from "./components/Nav";
 import Jumbo from "./components/Jumbotron";
@@ -12,7 +12,9 @@ import API from "./utils/API.js"
 class App extends Component{
 //set initial state for the player data
 state = {
- 
+  // team:[],
+  drafted:[],
+  myTeam:[],
   players:[],
   position: '',
   team: '',
@@ -56,7 +58,7 @@ getAllPlayers = () => {
 
   API.getPlayers()
     .then (res =>{
-      console.log(`Response ${res}`);
+      // console.log(`Response ${res}`);
       this.setState({players: res.data})
     }
      
@@ -129,16 +131,28 @@ getAllTE = ()=>{
     )
 .catch(err => console.log(err));
 }
+
+addToMyTeam = (name) => {
+  API.getPlayer(name)
+  .then (res => {
+     
+    console.log(`add team Response ${JSON.stringify(res.data)}`);
+    this.state.myTeam.push(res.data)
+  }
+  )
+.catch(err => console.log(err));
+}
+
   render()
   {
-    console.log(this.state.players)
+    //console.log(this.state.players)
     return (
       <div>
         <Jumbo/>
-        <Nav/>
+        <Nav myTeam ={this.state.myTeam} drafted ={this.state.drafted}/>
         {/* Pass the data down as props to the grid */}
         {/* <Grid  position= {position} team = {team} player = {player} teir = {teir}  /> */}
-        <Grid players ={this.state.players} getAllQuarterBacks = {this.getAllQuarterBacks} getAllRB ={this.getAllRB} getAllWR={this.getAllWR} getAllDEF={this.getAllDEF} getAllTE={this.getAllTE} getAllPL={this.getAllPL}/>
+        <Grid players ={this.state.players} getAllQuarterBacks = {this.getAllQuarterBacks} getAllRB ={this.getAllRB} getAllWR={this.getAllWR} getAllDEF={this.getAllDEF} getAllTE={this.getAllTE} getAllPL={this.getAllPL}  addToMyTeam={this.addToMyTeam}/>
       </div>
    );
   }
