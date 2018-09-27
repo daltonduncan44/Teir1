@@ -37,6 +37,8 @@ render(){
             <th>Position</th>
             <th>Tier</th>
             <th>Position Rank</th>
+            <th>Add To Your Team</th>
+            <th>Player Was Drafted</th>
           </tr>
         </thead>
         <tbody>
@@ -51,6 +53,8 @@ render(){
             <td>{player.Position}</td>
             <td>{player.Teir}</td>
             <td>{player.Pr}</td>
+            <td><Button color="success">My Team</Button>{' '}</td>
+            <td><Button color="danger">Taken</Button>{' '}</td>
           </tr>
           )
           })}
