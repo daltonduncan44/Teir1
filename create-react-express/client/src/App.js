@@ -143,6 +143,17 @@ addToMyTeam = (name) => {
 .catch(err => console.log(err));
 }
 
+addToDrafted = (name) => {
+  API.getPlayer(name)
+  .then (res => {
+     
+    console.log(`add team Response ${JSON.stringify(res.data)}`);
+    this.state.drafted.push(res.data)
+  }
+  )
+.catch(err => console.log(err));
+}
+
   render()
   {
     //console.log(this.state.players)
@@ -152,7 +163,7 @@ addToMyTeam = (name) => {
         <Nav myTeam ={this.state.myTeam} drafted ={this.state.drafted}/>
         {/* Pass the data down as props to the grid */}
         {/* <Grid  position= {position} team = {team} player = {player} teir = {teir}  /> */}
-        <Grid players ={this.state.players} getAllQuarterBacks = {this.getAllQuarterBacks} getAllRB ={this.getAllRB} getAllWR={this.getAllWR} getAllDEF={this.getAllDEF} getAllTE={this.getAllTE} getAllPL={this.getAllPL}  addToMyTeam={this.addToMyTeam}/>
+        <Grid players ={this.state.players} getAllQuarterBacks = {this.getAllQuarterBacks} getAllRB ={this.getAllRB} getAllWR={this.getAllWR} getAllDEF={this.getAllDEF} getAllTE={this.getAllTE} getAllPL={this.getAllPL}  addToMyTeam={this.addToMyTeam} addToDrafted={this.addToDrafted}/>
       </div>
    );
   }

@@ -33,7 +33,7 @@ export default class Example extends React.Component {
     });
   }
   render() {
-    let { myTeam } = this.props
+    let { myTeam, drafted } = this.props
     return (
       <div>
         <Navbar className="navbar-dark bg-dark">
@@ -86,6 +86,7 @@ export default class Example extends React.Component {
           ) 
 })}
         </tbody>
+        
       </Table>
           </Col>
           <Col sm="12" md={{ size: 4, offset: 0 }}>
@@ -102,15 +103,18 @@ export default class Example extends React.Component {
           </tr>
         </thead>
         <tbody>
+        {drafted.map( taken =>{
+           return (
           <tr>
             <th scope="row">1</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
+            <td>{taken.Player}</td>
+            <td>{taken.Team}</td>
+            <td>{taken.Position}</td>
+            <td>{taken.Teir}</td>
+            <td>{taken.Pr}</td>
           </tr>
-
+           )
+        })}
         </tbody>
       </Table>
       </Col>

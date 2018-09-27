@@ -8,7 +8,7 @@ const Example = (props) => {
       
       <Jumbotron fluid>
         <Container fluid>
-          <h1 className="display-3 text-center">Teir1 Fantasy Football Draft App</h1>
+          <h1 className="display-3 text-center">Tier1 Fantasy Football Draft App</h1>
         
          
    <Row>

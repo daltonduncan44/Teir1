@@ -8,7 +8,7 @@ import { Button, ButtonGroup } from 'reactstrap';
 export default class Grid extends React.Component{
 render(){
 
-   let { players, getAllQuarterBacks, getAllRB, getAllWR, getAllDEF, getAllTE, getAllPL, addToMyTeam} = this.props
+   let { players, getAllQuarterBacks, getAllRB, getAllWR, getAllDEF, getAllTE, getAllPL, addToMyTeam, addToDrafted} = this.props
    //console.log(players)
 
 
@@ -18,7 +18,7 @@ render(){
 
     <Row>
 
-    <Col >
+    <Col className="playerTable">
     <ButtonGroup>
         <Button onClick={getAllPL}>All</Button>
         <Button onClick={getAllQuarterBacks}>QB</Button>
@@ -55,7 +55,7 @@ render(){
             <td>{player.Teir}</td>
             <td>{player.Pr}</td>
             <td><Button onClick={()=>addToMyTeam(player.Player)} color="success"  >My Team</Button>{' '}</td>
-            <td><Button color="danger">Taken</Button>{' '}</td>
+            <td><Button onClick={()=>addToDrafted(player.Player)} color="danger">Taken</Button>{' '}</td>
           </tr>
           )
           })}
