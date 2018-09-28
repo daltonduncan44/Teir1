@@ -63,12 +63,13 @@ export default class Example extends React.Component {
           <Table dark>
         <thead>
           <tr>
-          <th>#</th>
+          
             <th>Position</th>
             <th>Team</th>
             <th>Player</th>
             <th>Teir</th>
             <th>Position Rank</th>
+            <th>Remove Player</th>
           </tr>
         </thead>
         <tbody>
@@ -82,6 +83,7 @@ export default class Example extends React.Component {
             <td>{team.Position}</td>
             <td>{team.Teir}</td>
             <td>{team.Pr}</td>
+            <td><Button color="danger">Remove</Button>{' '}</td>
           </tr>
           ) 
 })}
@@ -94,12 +96,13 @@ export default class Example extends React.Component {
           <Table dark>
         <thead>
           <tr>
-          <th>#</th>
+         
             <th>Position</th>
             <th>Team</th>
             <th>Player</th>
             <th>Teir</th>
             <th>Position Rank</th>
+            <th>Remove Player</th>
           </tr>
         </thead>
         <tbody>
@@ -112,6 +115,7 @@ export default class Example extends React.Component {
             <td>{taken.Position}</td>
             <td>{taken.Teir}</td>
             <td>{taken.Pr}</td>
+            <td><Button color="danger">Remove</Button>{' '}</td>
           </tr>
            )
         })}

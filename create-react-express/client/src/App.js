@@ -135,9 +135,12 @@ getAllTE = ()=>{
 addToMyTeam = (name) => {
   API.getPlayer(name)
   .then (res => {
-     
+     const players = this.state.players.filter(player => player._id !== res.data._id) 
     console.log(`add team Response ${JSON.stringify(res.data)}`);
-    this.state.myTeam.push(res.data)
+    this.setState(prevState => ({
+      myTeam: [...prevState.myTeam, res.data],
+      players
+    }))
   }
   )
 .catch(err => console.log(err));
@@ -146,9 +149,12 @@ addToMyTeam = (name) => {
 addToDrafted = (name) => {
   API.getPlayer(name)
   .then (res => {
-     
+     const players = this.state.players.filter(player => player._id !== res.data._id)
     console.log(`add team Response ${JSON.stringify(res.data)}`);
-    this.state.drafted.push(res.data)
+    this.setState(prevState => ({
+      drafted: [...prevState.drafted, res.data],
+      players
+    }))
   }
   )
 .catch(err => console.log(err));
