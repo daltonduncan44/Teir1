@@ -48,7 +48,7 @@ export default class Example extends React.Component {
  
           
             <Row>
-            <Col sm="12" md={{ size: 2, offset: 5 }}>
+            <Col sm="12" md={{ size: 2, offset: 5 }} >
               <Card body inverse color="success">
         <CardTitle>Draft Help</CardTitle>
         <CardText></CardText>
@@ -58,7 +58,7 @@ export default class Example extends React.Component {
             </Row>
             
         <Row>
-        <Col sm="12" md={{ size: 4, offset: 2 }}>
+        <Col sm="12" md={{ size: 4, offset: 2 }} className="myTeamTable">
         <h2 className="text-white text-center">My Team</h2>
           <Table dark>
         <thead>
