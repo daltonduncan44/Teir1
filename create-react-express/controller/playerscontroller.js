@@ -48,7 +48,7 @@
   //  },
    findByPosition: function(req, res){
     db.Players
-    .find({ Position: "QB"})
+    .findAll({ Position: "QB"})
     .sort({ date: -1 })
     .then(dbPlayers => res.json(dbPlayers))
     .catch(err => res.status(422).json(err));
@@ -56,6 +56,7 @@
     //   [{$match: {Position: "QB"}}] .then(dbPlayers => res.json(dbPlayers))
     //   .catch(err => res.status(422).json(err)));
     },
+    //we need to fix this app
 
     findRB: function(req,res){
       db.Players

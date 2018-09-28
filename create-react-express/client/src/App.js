@@ -26,6 +26,7 @@ state = {
 //Component did mount that calls the controller method
 componentDidMount() {
   this.getAllPlayers(); 
+  
 
 }
 
